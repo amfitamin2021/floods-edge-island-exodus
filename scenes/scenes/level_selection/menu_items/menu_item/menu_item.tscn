@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsdggrqp83jxq"]
+
+[ext_resource type="TileSet" uid="uid://dbjcs7lsyh5t5" path="res://resources/base_tile_set.tres" id="1_ku3ox"]
+[ext_resource type="Script" path="res://scenes/scenes/level_selection/menu_items/menu_item/menu_item.gd" id="1_sy0lw"]
+[ext_resource type="Texture2D" uid="uid://dywfgmt6j3pv0" path="res://assets/level_close_marker.png" id="2_4n5yf"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_glgtx"]
+
+[node name="MenuItem" type="Node2D"]
+script = ExtResource("1_sy0lw")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_ku3ox")
+format = 2
+layer_0/name = "water"
+layer_1/name = "ground"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(0, 65536, 5, 1, 131072, 5, 2, 131072, 5, 65538, 655360, 2, 131074, 655360, 2, 196610, 720896, 3, 196611, 655360, 2, 196612, 131072, 6, 393222, 720896, 3, 327686, 720896, 4, 262150, 655360, 2, 196614, 720896, 2, 131078, 655360, 2, 65542, 720896, 1, 6, 131072, 5, 393221, 720896, 1, 327685, 720896, 2, 262149, 655360, 1, 196613, 720896, 3, 131077, 655360, 4, 65541, 655360, 1, 5, 131072, 5, 393220, 720896, 4, 327684, 720896, 2, 262148, 131072, 6, 131076, 655360, 1, 65540, 655360, 1, 4, 131072, 5, 393219, 720896, 2, 327683, 720896, 3, 262147, 655360, 3, 131075, 720896, 3, 65539, 655360, 4, 3, 131072, 5, 393218, 131072, 6, 327682, 655360, 3, 262146, 655360, 1, 393217, 655360, 1, 327681, 720896, 4, 262145, 655360, 1, 196609, 655360, 2, 131073, 720896, 4, 65537, 720896, 3, 393216, 65536, 6, 327680, 65536, 6, 262144, 65536, 6, 196608, 65536, 6, 131072, 65536, 6, 65536, 65536, 6, 458759, 196608, 7, 393223, 196608, 6, 327687, 196608, 6, 262151, 196608, 6, 196615, 196608, 6, 131079, 196608, 6, 65543, 196608, 6, 7, 196608, 5, 458758, 131072, 7, 458757, 131072, 7, 458756, 131072, 7, 458755, 131072, 7, 458754, 131072, 7, 458753, 131072, 7, 458752, 65536, 7)
+layer_2/name = "decorations"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array()
+
+[node name="Button" type="Button" parent="."]
+offset_right = 128.0
+offset_bottom = 128.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_glgtx")
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(78, 21)
+texture = ExtResource("2_4n5yf")
+
+[connection signal="toggled" from="Button" to="." method="_on_button_toggled"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0yprcjs8ucd1"]
+
+[ext_resource type="PackedScene" uid="uid://dsdggrqp83jxq" path="res://scenes/scenes/level_selection/menu_items/menu_item/menu_item.tscn" id="1_pacjt"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_0hgbl"]
+
+[node name="MenuItem1" instance=ExtResource("1_pacjt")]
+label = "Уровень 2"
+description = "Обыкновенное скопление небольших островов, преобладает зелёная растительность, на некоторых островах можно найти пополнить пищу и припасы..."
+scene = 3
+
+[node name="TileMap" parent="." index="0"]
+layer_1/tile_data = PackedInt32Array(0, 65536, 5, 1, 131072, 5, 2, 131072, 5, 65538, 655360, 4, 131074, 655360, 3, 196610, 262144, 5, 131078, 720896, 3, 65542, 655360, 3, 6, 131072, 5, 131077, 65536, 6, 65541, 65536, 6, 5, 65536, 5, 3, 196608, 5, 196609, 655360, 4, 131073, 655360, 2, 65537, 655360, 3, 196608, 65536, 6, 131072, 65536, 6, 65536, 65536, 6, 131079, 196608, 6, 65543, 196608, 6, 7, 196608, 5, 196611, 196608, 7, 196615, 196608, 7, 196613, 65536, 7, 196614, 131072, 7, 262144, 65536, 7, 131075, 196608, 6, 65539, 196608, 6, 458756, 196608, 7, 393220, 196608, 6, 327684, 196608, 5, 458755, 131072, 7, 393219, 720896, 4, 327683, 131072, 5, 458754, 65536, 7, 393218, 65536, 6, 327682, 65536, 5, 262145, 131072, 7, 262146, 196608, 7)
+layer_2/tile_data = PackedInt32Array(65542, 393217, 1, 196609, 393217, 1, 393219, 262145, 3, 131074, 458753, 1, 65538, 65537, 1)
+
+[node name="Button" parent="." index="1"]
+button_group = SubResource("ButtonGroup_0hgbl")
+
+[node name="Sprite2D" parent="." index="2"]
+position = Vector2(40, -8)

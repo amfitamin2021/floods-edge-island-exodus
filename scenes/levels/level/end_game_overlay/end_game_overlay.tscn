@@ -1,0 +1,309 @@
+[gd_scene load_steps=14 format=3 uid="uid://d2htntf36811b"]
+
+[ext_resource type="Script" path="res://scenes/levels/level/end_game_overlay/end_game_overlay.gd" id="1_u28go"]
+[ext_resource type="FontFile" uid="uid://c8uayek11eqjo" path="res://assets/font/EpilepsySansBold.ttf" id="2_yfpaq"]
+[ext_resource type="Texture2D" uid="uid://cp127krgtmrac" path="res://assets/buttons/green_button.png" id="3_2glt0"]
+[ext_resource type="Texture2D" uid="uid://da2dr7q8jxfe2" path="res://assets/buttons/green_button_pressed.png" id="4_qiwel"]
+[ext_resource type="Texture2D" uid="uid://wn11sano0h2f" path="res://assets/buttons/green_button_hovered.png" id="5_yvrgc"]
+[ext_resource type="Texture2D" uid="uid://bdlxohmbesxix" path="res://assets/buttons/red_button.png" id="6_xy1ch"]
+[ext_resource type="Texture2D" uid="uid://dru2a4yueotj2" path="res://assets/buttons/red_button_pressed.png" id="7_i8f73"]
+[ext_resource type="Texture2D" uid="uid://b54m4dyqc06pw" path="res://assets/buttons/red_button_hovered.png" id="8_dth0g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrdav"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 0.576471)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ndb8v"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="Animation" id="Animation_b3ugi"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Control:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/Control:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/Control:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/Control:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_p57vd"]
+resource_name = "appearance_overlay"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Control:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/Control:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/Control:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/Control:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fooxd"]
+_data = {
+"RESET": SubResource("Animation_b3ugi"),
+"appearance_overlay": SubResource("Animation_p57vd")
+}
+
+[node name="EndGameOverlay" type="CanvasLayer"]
+script = ExtResource("1_u28go")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="MarginContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -422.0
+offset_top = -316.5
+offset_right = 422.0
+offset_bottom = 316.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qrdav")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Control/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Control/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Header" type="Label" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("2_yfpaq")
+theme_override_font_sizes/font_size = 150
+text = "ПОБЕДА"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/separator = SubResource("StyleBoxLine_ndb8v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("2_yfpaq")
+theme_override_font_sizes/font_size = 35
+text = "Время попытки:"
+
+[node name="TimeLabel" type="Label" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("2_yfpaq")
+theme_override_font_sizes/font_size = 40
+text = "0
+"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("2_yfpaq")
+theme_override_font_sizes/font_size = 35
+text = "Потрачено блоков:"
+
+[node name="TileLabel" type="Label" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("2_yfpaq")
+theme_override_font_sizes/font_size = 40
+text = "0
+"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 5)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/separator = SubResource("StyleBoxLine_ndb8v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="ResetGameButton" type="TextureButton" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("6_xy1ch")
+texture_pressed = ExtResource("7_i8f73")
+texture_hover = ExtResource("8_dth0g")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResetGameButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("2_yfpaq")
+theme_override_font_sizes/font_size = 50
+text = "Рестарт"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartGameButton" type="TextureButton" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("3_2glt0")
+texture_pressed = ExtResource("4_qiwel")
+texture_hover = ExtResource("5_yvrgc")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/StartGameButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("2_yfpaq")
+theme_override_font_sizes/font_size = 65
+text = "Меню"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "appearance_overlay"
+libraries = {
+"": SubResource("AnimationLibrary_fooxd")
+}
+
+[connection signal="pressed" from="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResetGameButton" to="." method="_on_reset_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]

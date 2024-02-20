@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://dv5bjg8vf5ycb"]
+
+[ext_resource type="Script" path="res://scenes/levels/level/level.gd" id="1_k34g2"]
+[ext_resource type="TileSet" uid="uid://dbjcs7lsyh5t5" path="res://resources/base_tile_set.tres" id="2_v0t1o"]
+[ext_resource type="PackedScene" uid="uid://d2htntf36811b" path="res://scenes/levels/level/end_game_overlay/end_game_overlay.tscn" id="5_n2kb0"]
+[ext_resource type="PackedScene" uid="uid://lqhaiovxnu7q" path="res://scenes/elements/player/player.tscn" id="10_xj1cr"]
+[ext_resource type="PackedScene" uid="uid://dv21dagw8l67i" path="res://scenes/levels/level/hud/hud.tscn" id="11_tpnkh"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_k34g2")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_v0t1o")
+format = 2
+layer_0/name = "water"
+layer_1/name = "ground"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "ash"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "decoration"
+layer_3/enabled = true
+layer_3/modulate = Color(1, 1, 1, 1)
+layer_3/y_sort_enabled = false
+layer_3/y_sort_origin = 0
+layer_3/z_index = 0
+layer_3/tile_data = PackedInt32Array()
+
+[node name="Islands" type="Node" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("10_xj1cr")]
+position = Vector2(160, 528)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.2, 1.2)
+position_smoothing_enabled = true
+
+[node name="HUD" parent="Player/Camera2D" instance=ExtResource("11_tpnkh")]
+
+[node name="FoodTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="EndGameOverlay" parent="." instance=ExtResource("5_n2kb0")]
+
+[connection signal="island_reached" from="Player" to="." method="on_island_reached"]
+[connection signal="timeout" from="FoodTimer" to="." method="_on_food_timer_timeout"]

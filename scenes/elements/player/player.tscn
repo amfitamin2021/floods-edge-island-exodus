@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://lqhaiovxnu7q"]
+
+[ext_resource type="Texture2D" uid="uid://b18oso8vfjxjo" path="res://assets/mPlayer_ [human].png" id="1_4a4p3"]
+[ext_resource type="Script" path="res://scenes/elements/player/player.gd" id="1_kik0p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhnst"]
+atlas = ExtResource("1_4a4p3")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ew16"]
+size = Vector2(1, 21)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_kik0p")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(5, -11)
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_bhnst")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-3, -10)
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_bhnst")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_bhnst")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D4"]
+position = Vector2(13.3333, 0)
+texture = SubResource("AtlasTexture_bhnst")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.5, -3.5)
+shape = SubResource("RectangleShape2D_0ew16")

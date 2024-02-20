@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7w7bsttrgk5w"]
+
+[ext_resource type="PackedScene" uid="uid://bonxjo04n02ra" path="res://scenes/elements/islands/island/island.tscn" id="1_pii5n"]
+[ext_resource type="Texture2D" uid="uid://b18oso8vfjxjo" path="res://assets/mPlayer_ [human].png" id="2_2ysqu"]
+[ext_resource type="AnimationLibrary" uid="uid://djwl876q4a48o" path="res://resources/animations/landing_animation/healing1_landing_animation.res" id="3_rv74f"]
+
+[node name="HealingIsland1" instance=ExtResource("1_pii5n")]
+tile_amount = 0
+landing_animation_name = "healing1_landing_animation/landing_animation"
+
+[node name="TileMap" parent="." index="0"]
+layer_1/tile_data = PackedInt32Array(262144, 65536, 5, 327680, 65536, 6, 393216, 65536, 7, 262145, 327680, 6, 327681, 131072, 6, 393217, 327680, 5, 458753, 65536, 7, 2, 65536, 5, 65538, 65536, 6, 131074, 327680, 6, 196610, 720896, 1, 262146, 655360, 3, 327682, 655360, 1, 393218, 655360, 2, 458754, 327680, 5, 524290, 65536, 7, 3, 131072, 5, 65539, 655360, 2, 131075, 131072, 6, 196611, 131072, 6, 262147, 131072, 6, 327683, 131072, 6, 393219, 655360, 1, 458755, 655360, 2, 524291, 131072, 7, 4, 131072, 5, 65540, 655360, 2, 131076, 655360, 2, 196612, 131072, 6, 262148, 655360, 4, 327684, 655360, 2, 393220, 720896, 2, 458756, 655360, 2, 524292, 327680, 5, 5, 196608, 5, 65541, 262144, 6, 131077, 655360, 2, 196613, 131072, 6, 262149, 655360, 1, 458757, 720896, 1, 524293, 655360, 1, 65542, 131072, 5, 131078, 655360, 2, 196614, 655360, 2, 262150, 655360, 2, 458758, 720896, 1, 524294, 262144, 5, 65543, 196608, 5, 131079, 262144, 6, 196615, 655360, 1, 262151, 720896, 3, 131080, 131072, 5, 196616, 720896, 2, 262152, 720896, 4, 327688, 655360, 3, 393224, 720896, 4, 196609, 65536, 6, 131073, 65536, 5, 327685, 131072, 6, 393221, 655360, 1, 393222, 655360, 4, 327686, 720896, 3, 327687, 720896, 1, 393223, 655360, 2, 262153, 655360, 4, 196617, 262144, 6, 131081, 196608, 5, 589830, 196608, 7, 524295, 196608, 7, 458759, 262144, 5, 589829, 131072, 7, 589828, 65536, 7, 458760, 131072, 7, 458761, 196608, 7, 393225, 196608, 6, 327689, 262144, 5, 327690, 196608, 7, 262154, 196608, 6, 196618, 196608, 5)
+layer_3/tile_data = PackedInt32Array(458758, 65537, 1, 393220, 65537, 1, 262152, 393217, 1, 65539, 393217, 1, 262146, 65545, 1, 196615, 65545, 1, 327685, 458753, 7, 327681, 65545, 3, 65540, 65545, 4, 196613, 65537, 5, 327683, 589833, 5, 458755, 458761, 1, 327688, 589833, 1, 196611, 589833, 1)
+layer_4/tile_data = PackedInt32Array(2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 131079, 2, 0, 131080, 2, 0, 131081, 2, 0, 196617, 2, 0, 196618, 2, 0, 262154, 2, 0, 327689, 2, 0, 327690, 2, 0, 393225, 2, 0, 458761, 2, 0, 458760, 2, 0, 458759, 2, 0, 524295, 2, 0, 524294, 2, 0, 589830, 2, 0, 589829, 2, 0, 589828, 2, 0, 524292, 2, 0, 524291, 2, 0, 524290, 2, 0, 458754, 2, 0, 458753, 2, 0, 393217, 2, 0, 393216, 2, 0, 327680, 2, 0, 524293, 2, 0, 458755, 2, 0, 262144, 2, 0, 262145, 2, 0, 196609, 2, 0, 131073, 2, 0, 131074, 2, 0, 65538, 2, 0, 196612, 2, 0, 131076, 2, 0, 65540, 2, 0, 65539, 2, 0, 131075, 2, 0, 196611, 2, 0, 196610, 2, 0, 262146, 2, 0, 327682, 2, 0, 327681, 2, 0, 393218, 2, 0, 393219, 2, 0, 327683, 2, 0, 262147, 2, 0, 262148, 2, 0, 327684, 2, 0, 393220, 2, 0, 458756, 2, 0, 458757, 2, 0, 393221, 2, 0, 327685, 2, 0, 262149, 2, 0, 196613, 2, 0, 131077, 2, 0, 131078, 2, 0, 196614, 2, 0, 262150, 2, 0, 327686, 2, 0, 393222, 2, 0, 458758, 2, 0, 393223, 2, 0, 327687, 2, 0, 262151, 2, 0, 196615, 2, 0, 196616, 2, 0, 262152, 2, 0, 327688, 2, 0, 393224, 2, 0, 262153, 2, 0)
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+position = Vector2(8, 8)
+polygon = PackedVector2Array(8, 56, 8, 24, 24, 24, 24, -8, 88, -8, 88, 8, 120, 8, 120, 24, 152, 24, 152, 40, 168, 40, 168, 88, 152, 88, 152, 120, 120, 120, 120, 136, 104, 136, 104, 152, 56, 152, 56, 136, 24, 136, 24, 120, 8, 120, 8, 104, -8, 104, -8, 56)
+
+[node name="Sprite2D" type="Sprite2D" parent="LandingAnimation" index="0"]
+y_sort_enabled = true
+position = Vector2(77, 83)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_2ysqu")
+region_enabled = true
+region_rect = Rect2(8, 40, 16, 24)
+
+[node name="Sprite2D2" type="Sprite2D" parent="LandingAnimation" index="1"]
+y_sort_enabled = true
+position = Vector2(56, 75)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_2ysqu")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(8, 40, 16, 24)
+
+[node name="Sprite2D3" type="Sprite2D" parent="LandingAnimation" index="2"]
+y_sort_enabled = true
+position = Vector2(60, 57)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_2ysqu")
+region_enabled = true
+region_rect = Rect2(8, 40, 16, 24)
+
+[node name="Sprite2D4" type="Sprite2D" parent="LandingAnimation" index="3"]
+y_sort_enabled = true
+position = Vector2(86, 64)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_2ysqu")
+region_enabled = true
+region_rect = Rect2(8, 40, 16, 24)
+
+[node name="AnimationPlayer" parent="LandingAnimation" index="4"]
+libraries = {
+"healing1_landing_animation": ExtResource("3_rv74f")
+}
